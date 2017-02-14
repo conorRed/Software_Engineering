@@ -6,10 +6,35 @@
 
 <body>
 
+
 {{>navbar}}
 
-
+{{>posts}}
 </body>
+<template name = "posts">
+  <div class="well col-xs-6 col-xs-offset-3">
+      
+    <div class="row col-xs-10 col-xs-offset-1">
+
+        <form class="form-horizontal" role = "form" id="postForm">
+            
+            <div class="row">
+              <div class="form-group">
+                <div class="col-xs-12" id = "well-post">
+                  <textarea class="form-control required" rows="3" id = "input-post" placeholder="Got something to say?" maxlength="140"></textarea>
+                  <label id = "charsRemaining" for="inputPost">{{charsRemaining}}</label>
+                  <div class="col-xs-3 col-xs-offset-3">
+                    <button type="submit" class="btn btn-success">Post</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </form>
+      
+    </div>
+  </div>
+</template>
 <template name = "home">
 <div class = "container-fluid">
   <div class = "jumbotron">
@@ -26,7 +51,7 @@
     <a class = "navbar-brand" href = "#">BABBLE</a>
     </div>
         <ul class="nav nav-pills">
-          <li class = "active"><a href = "/home">Home</a></li>
+          <li class = "active"><a href = "/">Home</a></li>
           <li><a href = "aboutus">About</a></li>
         </ul>
         </div>
