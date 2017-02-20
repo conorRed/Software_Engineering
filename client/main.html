@@ -9,7 +9,7 @@
 
 {{>navbar}}
 
-{{>posts}}
+
 </body>
 <template name = "posts">
   <div class="well col-xs-6 col-xs-offset-3">
@@ -21,7 +21,7 @@
             <div class="row">
               <div class="form-group">
                 <div class="col-xs-12" id = "well-post">
-                  <textarea class="form-control required" rows="3" id = "input-post" placeholder="Got something to say?" maxlength="140"></textarea>
+                  <textarea class="form-control required" rows="3" id = "inputPost" placeholder="Got something to say?" maxlength="140"></textarea>
                   <label id = "charsRemaining" for="inputPost">{{charsRemaining}}</label>
                   <div class="col-xs-3 col-xs-offset-3">
                     <button type="submit" class="btn btn-success">Post</button>
@@ -39,9 +39,13 @@
 <div class = "container-fluid">
   <div class = "jumbotron">
     Main page for BABBLE.COM!
+
     <p>In developement</p>
 
   </div>
+</div>
+<div class="container-fluid">
+  <div class="row"> <h1>Some Text...</h1></div>
 </div>
 </template>
 <template name = "navbar">
