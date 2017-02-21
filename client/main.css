@@ -15,5 +15,12 @@ text-align: center;}
 	background-repeat: no-repeat;
 	background-size: 100%;
 }
+body{
+	background-image: url("https://cdn.shutterstock.com/shutterstock/videos/7805119/thumb/12.jpg?i10c=img.resize(height:160)");
+	/*https://s-media-cache-ak0.pinimg.com/originals/09/de/cd/09decdb46ab8a4cf2d889635f91b7ae1.jpg*/
+	background-size: 100%;
+}
 button{margin: 5px;}
-h2{margin : 50px;}
+h2{margin : 50px;width: 100%;}
+img{height: 100px;width: 100px;margin: 50px }
+.container{border-style: solid;}
