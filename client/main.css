@@ -23,4 +23,10 @@ body{
 button{margin: 5px;}
 h2{margin : 50px;width: 100%;}
 img{height: 100px;width: 100px;margin: 50px }
-.container{border-style: solid;}
+#navbar_login{
+	color: white;
+}
+#navbar_login input{
+	margin: 10px;
+	height: 20px;
+}
