@@ -2,30 +2,38 @@ import { Template } from 'meteor/templating';
 import './main.html';
 
 
-Template.posts.helpers({
-  charsRemaining: function(){
-    return Session.get("cr");
-  }
-});
-Template.posts.events({
-  'keyup #inputPost' : function(event){
-    var inputText = event.target.value;
-    Session.set("cr",(140-inputText.length) + " Characters remaining");
-   // Meteor.subscribe('userPosts');
-  },
+Template.sign_up_form.events({
   'submit #postForm' : function(){
-    var post = event.target.inputPost.value;
-    event.target.reset();
-    Session.set("cr", 140 + " Characters remaining");
-    Meteor.call('insertPost',post);
-
-  }
+      event.preventDefault();
+        var newUserData = {
+          username: $('[id="username"]').val(),
+          email: $('[id="email"]').val(),
+          password: $('[id="password"]').val()
+        };
+        Meteor.call('insertUser', newUserData);
+        Meteor.loginWithPassword(newUserData.email, newUserData.password);
+        Router.go('/');
+      },
 });
+Template.navbar_main.events({
+  'click .logout' : function(){
+      event.preventDefault();
+      Meteor.logout();
+      Router.go('/');
+    },
+  'submit #navbar_login' : function(){
+      event.preventDefault();
+        var email = $('[id=email]').val();
+        var password = $('[id=password]').val();
+        Meteor.loginWithPassword(email, password);
+        Router.go('/aboutus');
+    }
+});
+
+
 Template.body.helpers({
   posts : function () {
     return Posts.find();
   }
 });
-Template.posts.onRendered(function(){
-  $("postForm").validate();
-});
+
