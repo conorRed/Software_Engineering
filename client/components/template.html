@@ -1,9 +1,7 @@
 <template name = "home">
- 
 <div class = "container-fluid">
   <div class = "jumbotron">
     Main page for BABBLE.COM!
-
     <p>In developement</p>
   </div>
 
@@ -28,7 +26,6 @@
           <li><a href = "/aboutus">About</a></li>
            {{#if currentUser}}
         <li><a href="#" class="logout">Logout</a></li>
-         
           {{else}}
            <li><a  href = "login">Login</a></li>
              
@@ -44,7 +41,7 @@
                               <label>Password</label>
                                 <input type="password" class = "form-control" id="password">
                                 </div>
-                                <buttom type = "submit" class = "btn btn-primary ">Log in</buttom>
+                                <buttom type = "submit" id = "navbar_login_button" class = "btn btn-success">Log in</buttom>
             </form> 
           </div>
             </li>
@@ -82,6 +79,7 @@
 </template>
  
 <template name = "aboutus">
+
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">

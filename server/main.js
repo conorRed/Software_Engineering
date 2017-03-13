@@ -26,8 +26,14 @@ Meteor.methods({
 		}
 
 		)
-	}
+	},
+	'printName' : function(){
+		return this.userId;
+	},
+
+ 
 });
+
 
 Meteor.publish('userPosts',function (argument) {
 	return Posts.find();
