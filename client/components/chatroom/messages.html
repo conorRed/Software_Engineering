@@ -1,0 +1,22 @@
+<template name="messages">
+<div class = "displayed_messages">
+  {{#each messages}}
+  <div class="message">
+    <p>
+      <span>{{time this.time }}</span>
+    </p>
+    <p>
+      <span>{{this.message}}</span>
+    </p>
+    <div class="clearfix"></div>
+  </div>
+{{/each}}
+</div>
+
+<div>
+<form>
+<textarea name = "message"></textarea>
+<button class = "btn btn-default"  id = "newMessage" type = "submit">Submit</button>
+</form>
+</div>
+</template>
