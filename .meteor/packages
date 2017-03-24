@@ -27,3 +27,6 @@ ian:accounts-ui-bootstrap-3
 accounts-base
 accounts-password
 babel-runtime
+momentjs:moment
+themeteorchef:jquery-validation
+aldeed:simple-schema

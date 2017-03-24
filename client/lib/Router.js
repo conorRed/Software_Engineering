@@ -29,8 +29,24 @@ Router.route('/login',function () {
 	this.render('login',{to: "mainSection"});
 	this.layout("main");
 });
+
 Router.route('/chatroom',function () {
+	
 	this.render('chatroom',{to: "mainSection"});
 	this.layout("main");
+});
+
+Router.route('/create',function () {
+	this.render('createchat',{to: "mainSection"});
+	this.layout("main");
+});
+
+Router.route('/chatroom/:_name',function () {
+	this.render('chatroom',{to: "mainSection"});
+	this.layout("main");
+	this.next();	
+},
+	{
+		name : 'chatroom.create'	
 });
 

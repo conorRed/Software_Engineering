@@ -2,7 +2,10 @@
 <div class = "displayed_messages">
   {{#each messages}}
   <div class="message">
-    <p>
+ 
+  <p>
+     <span>{{user}} ---</span>
+
       <span>{{time this.time }}</span>
     </p>
     <p>
@@ -13,10 +16,12 @@
 {{/each}}
 </div>
 
-<div>
-<form>
-<textarea name = "message"></textarea>
-<button class = "btn btn-default"  id = "newMessage" type = "submit">Submit</button>
-</form>
-</div>
+</template>
+<template name = "messageBox">
+	<div class = "container">
+		<form>
+			<textarea name = "message"></textarea>
+			<button class = "btn btn-default"  id = "newMessage" type = "submit">Submit</button>
+		</form>
+	</div>
 </template>
