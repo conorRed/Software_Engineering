@@ -7,27 +7,34 @@ Router.route('/',function () {
 	this.layout("main");
 });
 
-Router.route('/logout',function () {
-	Meteor.logout();
-	this.render('home',{to: "mainSection"});
-	this.layout("main");
-});
 Router.route('/aboutus',function () {
 	this.render('aboutus');
 	this.layout("main");
 });
 Router.route('/dashboard',function () {
-	this.render(Meteor.user() ? 'dashboard':'home' , {to: "mainSection"});
-	this.layout("main");
+	if(Meteor.user()){
+		this.render("dashboard", {to : "mainSection"});
+	}else{
+		Router.go("login");
+	}
+	 
 });
+/*
+Router.route('/dashboard',function () {
+	console.log(Meteor.users.find().fetch());
+	this.render(Meteor.user() ? "dashboard" : "login", {to : "mainSection"});  
+	this.layout("main");
+	this.next();
+});*/
 Router.route('/signup',function () {
 	this.render('sign_up_form', {to: "mainSection"});
 	this.layout("main");
 });
 
 Router.route('/login',function () {
-	this.render('login',{to: "mainSection"});
-	this.layout("main");
+		console.log('loading login');
+		this.render('login', {to: "mainSection"});
+
 });
 
 Router.route('/chatroom',function () {
@@ -39,6 +46,9 @@ Router.route('/chatroom',function () {
 Router.route('/create',function () {
 	this.render('createchat',{to: "mainSection"});
 	this.layout("main");
+
+},{
+	name: 'create.chatroom'
 });
 
 Router.route('/chatroom/:_name',function () {

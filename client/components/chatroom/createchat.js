@@ -1,3 +1,4 @@
+
 Template.createchat.events({
 	'submit form' : function (e) {
 		var name = e.target.name.value;
@@ -5,9 +6,16 @@ Template.createchat.events({
 			name : name,
 			createdBy: Meteor.user() 
 		});
-		console.log(Meteor.userId());
-		Router.go('chatroom.create',{_name: Chatrooms.find({ "_id": this._id})}); 
+		
+		Router.go('chatroom.create',_name: name); 
+    Session.set("chatroom name", name);
+    console.log(Session.get("chatroom name"));
 	}
+});
+
+
+Template.createchat.helpers({
+   user : getUser
 });
 
 Template.createchat.onRendered(function () {
@@ -23,3 +31,6 @@ Template.createchat.onRendered(function () {
   }
 
 );
+function getUser(){
+  return this.userId;
+}

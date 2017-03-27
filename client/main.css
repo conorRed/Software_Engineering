@@ -11,8 +11,8 @@ a{
 text-align: center;}
 
 body{
-	/*background-image: url("http://orig03.deviantart.net/7737/f/2009/202/0/f/old_newspaper_texture_by_powerpuffjazz.jpg");
-	/*https://s-media-cache-ak0.pinimg.com/originals/09/de/cd/09decdb46ab8a4cf2d889635f91b7ae1.jpg*/
+	background-image: url("http://orig03.deviantart.net/7737/f/2009/202/0/f/old_newspaper_texture_by_powerpuffjazz.jpg");
+	/**/
 	height: 100%;
 	width: 100%;
 }
@@ -44,4 +44,17 @@ img{height: 100px;width: 100px;margin: 50px }
 	margin: 10px;
 	overflow-y: scroll;
 	height : 500px;
+}
+#createchat_container{
+	margin:100px;
+}
+#createchat_name input{
+
+	 border: 2px solid;
+    border-radius: 25px;
+    font-size:75px;
+   
+}
+#createchat_name input:focus{
+     border-color: #cc00cc;
 }

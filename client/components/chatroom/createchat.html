@@ -1,16 +1,17 @@
 <template name = "createchat">
-<div class = "container">
-	<div class = "row col-xs-offset-5">
-		<div>{{trending}}</div>
+<div class = "container" id = "createchat_container">
+	<div class = "row col-xs-offset-0">
+		<div>Trending: {{trending}} User:{{user}}</div>
 		<form>
-			<div>
-				<input type = "text" class = "form-group required" placeholder = "chatroom name">
-			</div>
-			<div>
-				<button type = "submit">
+			<div id = "createchat_name">
+				<input type = "text" class = "form-group required col-xs-12" placeholder = "chatroom name">
+				<div class="">
+				<button type = "submit" class = "btn btn-primary col-xs-12 " style = "padding: 25px;font-size: 20px">
 					Create
 				</button>
 			</div>
+			</div>
+			
 		</form>
 	</div>
 
