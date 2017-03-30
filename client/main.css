@@ -39,24 +39,6 @@ img{height: 100px;width: 100px;margin: 50px }
 #login{
 	margin-top: 10px;
 }
-.displayed_messages{
-	margin: 10px;
-	overflow-y: scroll;
-	height : 500px;
-}
-#createchat_container{
-	margin:100px;
-}
-#createchat_name input{
-
-	 border: 2px solid;
-    border-radius: 25px;
-    font-size:75px;
-   
-}
-#createchat_name input:focus{
-     border-color: #cc00cc;
-}
 
 .chat
 {
@@ -64,42 +46,24 @@ img{height: 100px;width: 100px;margin: 50px }
     margin: 0;
     padding: 0;
 }
-
-.chat li
-{
-    margin-bottom: 10px;
-    padding-bottom: 5px;
-    border-bottom: 1px dotted #B3A9A9;
+#chatroom-panel{
+    overflow-y: scroll;
 }
-
-.chat li.left .chat-body
-{
-    margin-left: 60px;
-}
-
-.chat li.right .chat-body
-{
-    margin-right: 60px;
-}
-
-
-.chat li .chat-body p
-{
-    margin: 0;
-    color: #777777;
+.panel-footer{
+    position: absolute;
+      right: 0;
+    bottom: 0;
+    left: 0;
 }
 
 .panel .slidedown .glyphicon, .chat .glyphicon
 {
     margin-right: 5px;
 }
-
-.panel-body
-{
+#twitter-feed-panel{
     overflow-y: scroll;
     height: 400px;
 }
-
 #all-chatrooms
 {
     overflow-y: scroll;
@@ -149,4 +113,14 @@ img{height: 100px;width: 100px;margin: 50px }
 }
 #page-wrapper{
     margin-top: 60px;
+}
+#chatroom-panel{
+    height: 500px;
+    width : 800px;
+}
+#chatroom-panel-header{
+    margin-top: 40px;
+}
+div{
+    border-style: solid;
 }

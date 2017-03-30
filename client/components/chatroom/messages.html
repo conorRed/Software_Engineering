@@ -1,9 +1,9 @@
-<template name = "messages">
+<template name = "messages" >
 <div class="container">
-    <div class="row">
+   
         <div class="col-md-12">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
+            <div class="panel panel-primary col-md-12">
+                <div class="panel-heading" id = "chatroom-panel-header">
                     <span class="glyphicon glyphicon-envelope"></span> <span style="font-size:25px">{{#each chatroomname}}{{this.name}}{{/each}}</span><br>  <span>admin: {{user}}</span>
                     <div class="btn-group pull-right">
                         <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -16,62 +16,62 @@
                         </ul>
                     </div>
                 </div>
-                <div class="panel-body">
-                    <ul class="chat">
-<div class="chat-body clearfix">
-                                    {{#each messages}}
+                <div class="panel-body" id = "chatroom-panel">
+          <ul class="chat">
+              <div class="chat-body ">
+                                  
                       <li>
+                      
                             
-                                <div class="header">
-                                    <strong class="primary-font"><a href="{{pathFor route = 'user-profile' _user = this.username}}">{{user}}</a>: </strong> 
-                                </div>
+                               
                                 <p>
-                                  <div class = "displayed_messages">
-                    
+                                 
+                                    {{#each messages}}
+                                     <div class="header">
+                                    <strong class="primary-font"><a href="{{pathFor route = 'user-profile' _user = this.username}}">{{user}}</a>: </strong> 
+                                </div>  
                                       <p class="message">
                                         {{time this.time}},  
                                         <span class="click-me">{{text}}</span>
                                       </p>    
-                            </div>
+                                      {{/each}}
+                           
                                 </p>
                           
                       </li>  
-                      {{/each}}
+                  
                    </div>       
                     </ul>
-
+        
                 </div>
-               {{>messageBox}}
+                {{>messageBox}}
             </div>
         </div>
-    </div>
+    
 </div>
  
 </template>
 
 <template name = "messageBox">
-	<div class="row send-wrap">
   
-   <div class="panel-footer">
-   <form class = "form-horizontal">
-                <div class="input-group">
-                <ul>
-                <li>
+   <div class="panel-footer col-md-12">
+   <form class = "form-inline">
+                <div class="input-group pull-left">
+          
                         <input id="btn-input" name = "message" type="text" class="form-control input-lg" placeholder="Type your message here...">
-                  </li>
-                  <li> 
+                
+             
                     <span class="input-group-btn" >
                             <button class="btn btn-default btn-lg" id="btn-chat" type = "submit">
                                 Send
                                 </button>
                         </span>
-                        </li>
-                  </ul>
+
                 </div>
                     
           </form>
       </div>
-      </div>
+
 </template>
   
 
