@@ -1,0 +1,38 @@
+<template name = "userchatrooms">
+	<div class = "container" id = "user-chatrooms">
+<div class="jumbotron"><p>Your Chatrooms!</p>	</div>
+	
+
+<div class="list-group">
+ 
+	{{#each userchatrooms}}
+	
+	<div class="well">
+	<a class="list-group-item" href = "{{pathFor 'chatRoom' _id=_id}}">
+		<p>
+			{{this.name}}
+		</p>
+		</a>
+	</div>
+
+	 {{/each}}
+	 </div>
+	 </div>
+</template>
+<template name = "posts">
+<div class="jumbotron">Active Chatrooms
+<div class="list-group">
+
+<a href="#" class="list-group-item">MAYO FOR SAM</a>
+<a href="#" class="list-group-item ">CONRED97 THE GOAT</a>
+<a href="#" class="list-group-item">EMBIID IS INJURED</a>
+<a href="#" class="list-group-item">FUCK IT MASK OFF</a>
+<a href="#" class="list-group-item">MATHIAS IS LEBUM</a>
+<a href="#" class="list-group-item">MAYO FOR SAM</a>
+<a href="#" class="list-group-item ">CONRED97 THE GOAT</a>
+<a href="#" class="list-group-item">EMBIID IS INJURED</a>
+<a href="#" class="list-group-item">FUCK IT MASK OFF</a>
+<a href="#" class="list-group-item">MATHIAS IS LEBUM</a>
+</div>
+</div>
+</template>

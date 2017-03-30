@@ -1,0 +1,49 @@
+
+<head><title>Babble</title>
+</head>
+
+<template name = "userLayout">
+<div class = "row">
+
+   <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{pathFor route = 'user-profile' _user = user}}">Babble </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav side-nav">
+            <li class="active"><a href="{{pathFor route = 'user-profile' _user = user}}"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+            <li><a href="{{pathFor route ='createChatRoom'}}"><i class="glyphicon glyphicon-pencil"></i>Create Chatroom</a></li>
+            <li><a href="{{pathFor route ='userchatrooms' _user = user}}"><i class="glyphicon glyphicon-zoom-in"></i>View Chatrooms</a></li>
+            <li><a href="tables.html"><i class="glyphicon glyphicon-list-alt"></i>News</a></li>
+            <li><a href="{{pathFor route = 'logout'}}"><i class="glyphicon glyphicon-off"></i>Logout</a></li>
+          <li class="dropdown user-dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{user}} <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#"><i class="glyphicon glyphicon-file"></i>My Chats</a></li>
+                <li class="divider"></li>
+                <li><a href="{{pathFor route = 'logout'}}"><i class="glyphicon glyphicon-off"></i> Log Out</a></li>
+              </ul>
+            </li>
+          </ul>
+          </div>
+          </nav>
+   </div>
+<div class = "row">
+<div class = "col-xs-12">
+{{>yield "main"}}
+</div>
+</div>
+<aside>{{>yield "side"}}</aside>
+
+{{>yield "footer"}}
+</template>
+

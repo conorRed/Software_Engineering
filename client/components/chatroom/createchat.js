@@ -1,21 +1,25 @@
 
 Template.createchat.events({
-	'submit form' : function (e) {
-		var name = e.target.name.value;
-		Chatrooms.insert({
-			name : name,
-			createdBy: Meteor.user() 
-		});
-		
-		Router.go('chatroom.create',_name: name); 
-    Session.set("chatroom name", name);
-    console.log(Session.get("chatroom name"));
+	'submit #create-room' : function (e) {
+    e.preventDefault();
+		var name = e.target.name.value; 
+    console.log("about to create chatroom...");
+		Meteor.call('createChatRoom',name, function(err, chatRoomId) {
+      console.log(chatRoomId);
+      if (err) {
+        alert(err.reason);
+      } else {
+        console.log(chatRoomId);
+        Router.go('chatRoom',{ _id: chatRoomId });
+      }
+    });
+
 	}
 });
 
 
 Template.createchat.helpers({
-   user : getUser
+   //user : getUser
 });
 
 Template.createchat.onRendered(function () {
@@ -32,5 +36,5 @@ Template.createchat.onRendered(function () {
 
 );
 function getUser(){
-  return this.userId;
+  return Meteor.user().username;
 }

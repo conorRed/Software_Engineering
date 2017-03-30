@@ -1,43 +1,47 @@
 <template name = "sign_up_form" >
-<div class = "col-xs-4 container col-xs-offset-4 " id = "sign_up">
+<div class = "col-md-4 col-xs-8 container col-xs-offset-2 col-md-offset-4 " id = "sign_up">
 
-	<div class="well col-xs-12 col-xs-offset-0">
+  <div class="well col-xs-12 col-xs-offset-0">
       
-    	<div class= "row col-xs-9 col-xs-offset-1">
+      <div class= "row col-xs-10 col-xs-offset-1 text-center v-center">
        <div class=" row" id = "babble_logo_image">
-       <img class="img-circle col-xs-offset-4" id="img_logo" src="/logo.jpg">
+       <img class="img-circle col-xs-offset-2" id="img_logo" src="https://www.graphicsprings.com/filestorage/stencils/35faf6fb8b0c2ea65c156c2e122307bd.svg">
+       <label><h1>Sign up for Babble Today!</h1></label>
+          
         </div>
 
 
-        	<form class="form-horizontal" role = "form" id="postForm">
-          
-            	<div class="row">
-           
-               		<div class="form-group">
-                <label >Full Name</label>
+          <form class="form-horizontal" role = "form" id="postForm">
+
+
+              <div class="row">
+              
+                  <div class="form-group">
+                <label >Username:</label>
                 <input name = "username" type="text" class="form-control"  placeholder="Name">
                 </div>    
 
                   <div class="form-group">
-							    <label >Email address</label>
-							    <input name = "email" type="email" class="form-control"   placeholder="Enter email">
-							   	</div>
-							
-							    <div class="form-group">
-								<label>Password</label>
-								<input type="password" name = "password" class="form-control" placeholder="Password">
-								</div>	 	
+                  <label >Email address:</label>
+                  <input name = "email" type="email" class="form-control"   placeholder="Enter email">
+                  </div>
+              
+                  <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name = "password" class="form-control" placeholder="Password">
+                </div>    
 
-								<button type="submit" class="col-xs-12 btn pull-right btn-success" id = "sign_up_ button">Sign up</button>
+                <button type="submit" class="col-xs-12 btn pull-right btn-success" id = "sign_up_ button">Sign up</button>
+                {{>sAlert}}
 
-                	
+                  
             
-            	</div>
+              </div>
 
-        	</form>
+          </form>
       
-    	</div>
-  	</div>
+      </div>
+    </div>
  
 </div>
 </template>

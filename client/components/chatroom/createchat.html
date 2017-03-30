@@ -1,20 +1,36 @@
-<template name = "createchat">
-<div class = "container" id = "createchat_container">
-	<div class = "row col-xs-offset-0">
-		<div>Trending: {{trending}} User:{{user}}</div>
-		<form>
-			<div id = "createchat_name">
-				<input type = "text" class = "form-group required col-xs-12" placeholder = "chatroom name">
-				<div class="">
-				<button type = "submit" class = "btn btn-primary col-xs-12 " style = "padding: 25px;font-size: 20px">
-					Create
-				</button>
-			</div>
-			</div>
-			
-		</form>
-	</div>
+<template name = "createchat" >
+<div class="container" id = "create-chat">
+<form id = "create-room" class="form-horizontal">
+<fieldset>
+<div class="container">
+<div class="legend" style = "font-size: 25px;">Create a Chatroom!</div>
 
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Chatroom Name</label>  
+  <div class="col-md-4">
+  <input id="textinput" name="name" type="text" placeholder="Name" class="form-control input-md">
+    
+  </div>
 </div>
 
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="lastname">	Tags</label>  
+  <div class="col-md-4">
+  <input id="tags" name="tags" type="text" placeholder="eg: #Brexit" class="form-control input-md">
+    
+  </div>
+</div>
+
+ 
+  
+  <div class="wrapper">
+    <button id="button1id" name="button1id" class="btn btn-success col-xs-3 col-md-4 col-xs-offset-5 col-md-offset-4">Create</button>
+		</div>
+  
+</div>
+</fieldset>
+</form>
+</div>
 </template>

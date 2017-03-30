@@ -2,7 +2,6 @@
 Template.login.events({
 	'submit form': function(event){
         event.preventDefault();
-        
         var username = event.target.username.value;
         var password = event.target.password.value;
 
@@ -11,12 +10,9 @@ Template.login.events({
               sAlert.error(error.reason);
          }
          else{
-           Router.go("dashboard");
+               Router.go('user-profile',{_user : event.target.username.value});
          }
-       });
-
-      
-      
+       });  
 
     }
 });

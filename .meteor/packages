@@ -29,5 +29,9 @@ accounts-password
 babel-runtime
 momentjs:moment
 themeteorchef:jquery-validation
-aldeed:simple-schema
 juliancwirko:s-alert
+check
+aldeed:simple-schema
+aldeed:collection2
+accounts-facebook
+accounts-twitter

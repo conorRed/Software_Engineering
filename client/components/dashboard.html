@@ -1,130 +1,69 @@
+
 <template name = "dashboard">
-<section id="breadcrumb">
-      <div class="container">
-        <ol class="breadcrumb">
-        </ol>
-      </div>
-    </section>
-    <section id="main">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3">
-            <div class="list-group">
-              <a href="index.html" class="list-group-item active main-color-bg">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a href="{{pathFor create.chatroom}}" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Create Chatroom <span class="badge">12</span></a>
-              <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Posts <span class="badge">33</span></a>
-              <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Users <span class="badge">203</span></a>
-              <a href="#" class="list-group-item" id = "logout"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Logout <span class="badge">203</span></a>
-            </div>
+<body>
 
-            <div class="well">
-              <h4>Disk Space Used</h4>
-              <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-                      60%
+    <div id="wrapper">
+
+      <!-- Sidebar -->
+   
+      <div id="page-wrapper">
+
+    
+        <div id = "poll" class="row">
+          <div class="col-lg-4">
+            <div  class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="glyphicon glyphicon-log-in"></i>Have Your Say!</h3>
               </div>
-            </div>
-            <h4>Bandwidth Used </h4>
-            <div class="progress">
-                <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-                    40%
+              <div>
+              <script>(function(i,s,o,g,r,a,m){i['QP']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//scripts.poll-maker.com/3012/pollembed.js','qp');</script>
+              <a href='http://www.poll-maker.com' poll='1025341x3cC81213-43' style='width:100%;height:75%; display:block; text-align:right;'> </a>
+              </div>
+             
             </div>
           </div>
-            </div>
-          </div>
-          <div class="col-md-9">
-            <!-- Website Overview -->
-            <div class="panel panel-default">
-              <div class="panel-heading main-color-bg jumbotron">
-                  <h1>WELCOME {{user}}</h1>
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="fa fa-clock-o"></i> Recent Activity</h3>
               </div>
-              </div>
-
-              <!-- Latest Users -->
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Latest Topics</h3>
-                </div>
-                <div class="panel-body">
-                  <table class="table table-striped table-hover">
-                      <tr>
-                        <th>Name</th>
-                        <th>Created</th>
-                      </tr>
-                      <tr>
-                        <td>Donald Trump is president</td>
-                        <td>Dec 12, 2016</td>
-                      </tr>
-                      <tr>
-                        <td>Lebron is a bum</td>
-                        <td>Dec 13, 2016</td>
-                      </tr>
-                      <tr>
-                        <td>KD is a cuppcake</td>
-                        <td>Dec 13, 2016</td>
-                      </tr>
-                      <tr>
-                        <td>Warriors blew a 3-0 lead</td>
-                        <td>Dec 14, 2016</td>
-                      </tr>
-                      <tr>
-                        <td>Mayo will never win Sam!</td>
-                        <td>every year</td>
-                      </tr>
-                    </table>
+              <div class="panel-body" id = "all-chatrooms">
+                <div class="list-group">
+                 Chatrooms:
+                  {{#each chatroom}}
+                   
+                       <a href = "{{pathFor 'chatRoom' _id=_id}}"> <th>Chatroom name : {{this.name}} Time : {{time this.timestamp}}</th></a>
+                           
+                        {{else}}
+                         <p>No chat rooms.</p>
+                   {{/each}}
+                  
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="panel panel-primary">
+              <div class="panel-heading">
+                <h3 class="panel-title"><i class="glyphicon glyphicon-hand-down"></i>           Twitter Feed</h3>
+              </div>
+              <div class="panel-body">
+              <div id="" style="overflow:scroll; height:400px;">
+                <div class="twitter-responsive">
+                  <a class="twitter-timeline" href="https://twitter.com/BabbleChatrooms">Tweets by BabbleChatrooms</a> 
+                  <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+                <div class="text-right">
+                  <a href="#">View All <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <footer id="footer">
-      <p>Copyright AdminStrap, &copy; 2017</p>
-    </footer>
+      </div>
 
-    <!-- Modals -->
-
-    <!-- Add Page -->
-    <div class="modal fade" id="addPage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <form>
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add Page</h4>
-      </div>
-      <div class="modal-body">
-        <div class="form-group">
-          <label>Page Title</label>
-          <input type="text" class="form-control" placeholder="Page Title">
-        </div>
-        <div class="form-group">
-          <label>Page Body</label>
-          <textarea name="editor1" class="form-control" placeholder="Page Body"></textarea>
-        </div>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox"> Published
-          </label>
-        </div>
-        <div class="form-group">
-          <label>Meta Tags</label>
-          <input type="text" class="form-control" placeholder="Add Some Tags...">
-        </div>
-        <div class="form-group">
-          <label>Meta Description</label>
-          <input type="text" class="form-control" placeholder="Add Meta Description...">
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">Save changes</button>
-      </div>
-    </form>
     </div>
-  </div>
 </div>
+  </body>
 </template>

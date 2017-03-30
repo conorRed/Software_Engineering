@@ -14,15 +14,31 @@ Template.sign_up_form.events({
     password: password
   },function (error) {
     if(error){
-      console.log(error);
-      return error;
+      sAlert.error(error.reason);
 
     }
     else{
-      Router.go('/dashboard');
+      Router.go('user-profile',_user = username);
     }
    
   });
     
   }
 });
+
+
+Template.sign_up_form.onRendered(function () {
+    $(".login_form").validate({
+      rules: {
+    username: "required",
+    password:"required"
+  },
+  messages: {
+    password: "Please enter password",
+    username: "Please enter username"
+    
+  }
+    });
+  }
+
+);
